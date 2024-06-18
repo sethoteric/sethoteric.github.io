@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Seth's Practice Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="images/MLfavi.png">
+    <script src="https://kit.fontawesome.com/c7d1c54ee2.js" crossorigin="anonymous"></script>
+    <style>
+        nav {
+            background-color: rgb(34, 51, 72);
+            min-height: 6vh;
+            width: 100%;
+            box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.7);
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+        
+        a:visited {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: sienna;
+            text-decoration: underline;
+        }
+        
+        a:active {
+            text-decoration: none;
+        }
+        
+        #navbar {
+            list-style-type: none;
+            text-align: center;
+        }
+        
+        #pfp {
+            border: 1px solid sienna;
+            border-radius: 55px;
+            width: 30px;
+            height: 30px;
+        }
+        
+        li {
+            display: inline-block;
+            font-size: 40px;
+            margin-left: 50px;
+        }
+        
+        #headshot {
+            border-radius: 190px;
+            height: 350px;
+            width: 250px;
+            transition: transform .4s;
+            padding: 50px;
+        }
+        
+        #headshot:hover {
+            transform: scale(1.12);
+        }
+        
+        body {
+            background-color: rgb(24, 37, 37);
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        
+        h1 {
+            color: sienna;
+            text-align: center;
+        }
+        
+        h2 {
+            color: sienna;
+        }
+        
+        h3 {
+            color: lightblue;
+        }
+        
+        h4 {
+            color: darkolivegreen;
+        }
+        
+        #GUI {
+            height: 460px;
+            width: 800px;
+        }
+        
+        p {
+            color: blanchedalmond;
+        }
+        
+        a {
+            color: navajowhite;
+        }
+        
+        main {
+            color: darksalmon;
+            background-color: rgb(24, 37, 37);
+            display: flex;
+            padding: 25px;
+        }
+        
+        footer {
+            color: aliceblue;
+            background-color: rgb(34, 51, 72);
+            min-height: 2vh;
+            text-align: center;
+        }
+        
+        #linkedin {
+            height: 50px;
+            width: 50px;
+        }
+        
+        marquee {
+            font-size: 30pt;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: bisque;
+        }
+    </style>
+    <script>
+        const booksByGenre = {
+            "science fiction": ["The Naked Sun by Isaac Asimov", "Cloud Atlas by David Mitchell", "I, Robot by Isaac Asimov", "The Hidden Girl and Other Stories, by Ken Liu", "I Have No Mouth, and I Must Scream by Harlan Ellison"],
+            "fantasy": ["Percy Jackson and the Lightning thief by Rick Riordan", "Harry Potter and the Sorcerer's Stone by J.K. Rowling", "Eragon By Christopher Paolini", "Magic Tree House by Mary Pope Osborne"],
+            "mystery": ["The Mystery in Venice by Geronimo Stilton", "Gone Girl by Gillian Flynn", "The Da Vinci Code by Dan Brown", "A Study in Scarlet by Arthur Conan doyle"],
+            "non-fiction": ["Think Python: An Introduction to Software Design by Allen B. Downey", "A Brief History of Time by Stephen Hawking", "The Holy Bible"],
+            "manga": ["Jojo's Bizarre Adventure by Hirohiko Araki", "The Beginning After The End by TurtleMe", "Berserk by Kentaro Miura", "Yu-Gi-Oh! by Kazuki Takahashi", "Uzumaki by Junji Ito", "No Longer Human by Junji Ito", "One piece by Eiichiro oda"]
+        };
+
+        function getRecommendation() {
+            const genreInput = document.getElementById('genreInput').value.toLowerCase();
+            const recommendationOutput = document.getElementById('recommendationOutput');
+
+            if (booksByGenre[genreInput]) {
+                const books = booksByGenre[genreInput];
+                if (books.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * books.length);
+                    recommendationOutput.textContent = books[randomIndex];
+                    books.splice(randomIndex, 1);
+                } else {
+                    recommendationOutput.textContent = "Sorry, I'm out of recommendations for that genre.";
+                }
+            } else {
+                recommendationOutput.textContent = "Sorry, we don't have any recommendations for that genre.";
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul id="navbar">
+            <img id="pfp" src="images/pfp.jpeg" alt="developer typing">
+            <li><a href="index.html">Home</a> </li>
+            <li><a href="newAboutSeth.html">About</a></li>
+            <li><a href="index.html#projects"> Projects</a></li>
+            <li><a target="_blank" href="images/Resume - Seth Nyakeri v1.2.pdf">Resume</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welcome to Seth's Practice Portfolio</h1>
+
+    <div>
+        <img id="headshot" src="images/xbgHeadshot.png" alt="seth headshot">
+        <div style="display: inline-block; vertical-align: top; margin-left: 20px;">
+            <h2>Book Recommendation</h2>
+            <p>Enter a genre to get a book recommendation(science fiction, fantasy, mystery, non-fiction, manga):</p>
+            <input type="text" id="genreInput" placeholder="ex. science fiction">
+            <button onclick="getRecommendation()">Get Recommendation</button>
+            <p id="recommendationOutput"></p>
+        </div>
+    </div>
+
+    <marquee>aboutSeth Web Dev Page</marquee>
+
+    <h1>Interests</h1>
+    <p>I'm into tech. Mechanical keyboards and innovations and improvements to PC components, mainly GPUs are what really interest me.</p>
+
+    <div class="okwash">
+        <img src="images/gpu.webp" height="100" width="200">
+        <img src="images/noctua.jpeg" height="100" width="200">
+    </div>
+
+    <h1>Books</h1>
+    <p>I'm a big sci-fi fan, and my favorite author would probably be Isaac Asimov, my favorite books by him are "The Robots of Dawn", "I, Robot", and "Foundation and empire". I'd say getting into hard sci-fi has been one of my biggest inspirations, especially
+        relating to my future career choice and interests.
+    </p>
+
+    <div class="okwash">
+        <img src="images/robotsofdawn.jpeg" height="275" width="195">
+        <img src="images/irobot.webp" height="275" width="195">
+        <img src="images/FE.jpg" height="275" width="195">
+        <img src="images/radiant.png" height="275" width="195">
+    </div>
+
+    <h1>Likes</h1>
+    <p>I like games, ever since building a nicer system I've been playing Star citizen, and and when the weather starts to get nice I like going out, lake days are the best.</p>
+
+    <div class="okwash">
+        <img src="images/starcitizen.jpeg" height="220" width="160">
+        <img src="images/lakeday.jpeg" height="110" width="200">
+    </div>
+
+    <h1>Favorite artists</h1>
+    <p>My music taste has a lot of different stuff going on, some of my favorite artists are TV girl, Stereolab, and J.Cole </p>
+
+    <div class="okwash">
+        <img src="images/sidelinestory.jpeg" height="224" width="224">
+        <img src="images/summersover.jpeg" height="224" width="224">
+        <img src="images/stereolab.jpeg" height="224" width="224">
+    </div>
+
+    <h1>Tv Shows</h1>
+    <p>FX's Atlanta has been at the top of my list for a minute. My favorite animated shows are Invincible and Pantheon, and my favorite anime is Hunter x Hunter</p>
+    <div>
+        <img src="images/atlanta.jpeg" height="275" width="195">
+        <img src="images/invincible.jpeg" height="275" width="195">
+        <img src="images/pantheon.jpg_large" height="275" width="195">
+        <img src="images/hxh.jpeg" height="275" width="195">
+    </div>
+
+    <footer>
+        <p> <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/seth-nyakeri/"><i class="fa-brands fa-linkedin fa-3x"></i></a>
+            <a target="_blank" href="https://github.com/sethoteric"><i class="fa-brands fa-square-github fa-3x"></i></a>
+            <a target="_blank" href="https://www.instagram.com/sethomayo/"><i class="fa-brands fa-square-instagram fa-3x"></i></a>
+        </p>
+        <h4>©2024 Seth, all rights reserved</h4>
+    </footer>
+
+</body>
+
+</html>

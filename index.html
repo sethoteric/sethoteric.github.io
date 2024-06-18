@@ -2,11 +2,73 @@
 <html>
 
 <head>
-    <title>Seth's Portfolio</title>
+    <title>Seth's Practice Portfolio</title>
     <link rel="icon" type="image/x-icon" href="images/MLfavi.png">
+    <script src="https://kit.fontawesome.com/c7d1c54ee2.js" crossorigin="anonymous"></script>
     <style>
+        nav {
+            background-color: rgb(34, 51, 72);
+            min-height: 6vh;
+            width: 100%;
+            box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.7);
+        }
+        
+        a:link {
+            text-decoration: none;
+        }
+        
+        a:visited {
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: sienna;
+            text-decoration: underline;
+        }
+        
+        a:active {
+            text-decoration: none;
+        }
+        
+        #navbar {
+            list-style-type: none;
+            text-align: center;
+        }
+        
+        #pfp {
+            border: 1px solid sienna;
+            border-radius: 55px;
+            width: 30px;
+            height: 30px;
+        }
+        
+        li {
+            display: inline-block;
+            font-size: 40px;
+            margin-left: 50px;
+        }
+        
+        #headshot {
+            border-radius: 140px;
+            height: 350px;
+            width: 250px;
+            transition: transform .4s;
+        }
+        
+        #headshot:hover {
+            transform: scale(1.12);
+        }
+        
+        .aboutMe {
+            display: flex;
+            padding: 50px;
+        }
+        
         body {
             background-color: rgb(24, 37, 37);
+            display: flex;
+            flex-direction: column;
+            margin: 0;
         }
         
         h1 {
@@ -14,50 +76,100 @@
             text-align: center;
         }
         
-        footer {
-            font-size: 10x;
-            color: darkgoldenrod;
+        h2 {
+            color: sienna;
+        }
+        
+        h3 {
+            color: lightblue;
+        }
+        
+        h4 {
+            color: darkolivegreen;
+        }
+        
+        #GUI {
+            height: 460px;
+            width: 800px;
         }
         
         p {
-            color: brown;
+            color: blanchedalmond;
         }
         
-        pre {
+        a {
+            color: navajowhite;
+        }
+        
+        main {
             color: darksalmon;
+            background-color: rgb(24, 37, 37);
+            display: flex;
+            padding: 25px;
+        }
+        
+        footer {
+            color: aliceblue;
+            background-color: rgb(34, 51, 72);
+            min-height: 2vh;
             text-align: center;
+        }
+        
+        #linkedin {
+            height: 50px;
+            width: 50px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome to Seth's Portfolio</h1>
-    <pre>
-        ,---------------------------,
-        |  /---------------------\  |
-        | |                       | |
-        | |        Work           | |
-        | |         in            | |
-        | |      progress,        | |
-        | |     Check Back!       | |
-        |  \_____________________/  |
-        |___________________________|
-      ,---\_____     []     _______/------,
-    /         /______________\           /|
-  /___________________________________ /  | ___
-  |                                   |   |    )
-  |  _ _ _                 [-------]  |   |   (
-  |  o o o                 [-------]  |  /    _)_
-  |__________________________________ |/     /  /
-/-------------------------------------/|    ( )/
-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/ /
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    </pre>
+    <!-- dont forget to make any buttons highlight when they're pressed, add animations where you can-->
+
+    <nav>
+        <!--Try to add distinct shadow under nav-->
+        <ul id="navbar">
+            <img id="pfp" src="images/pfp.jpeg" alt="developer typing">
+            <li><a href="sethFolio.html">Home</a> </li>
+            <li><a href="newAboutSeth.html">About</a></li>
+            <li><a href="#projects"> Projects</a></li>
+            <li><a target="_blank" href="images/Resume - Seth Nyakeri v1.2.pdf">Resume</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welcome to Seth's Practice Portfolio</h1>
+
+    <div class="aboutMe">
+        <img id="headshot" src="images/xbgHeadshot.png" alt="seth headshot">
+        <div>
+            <h2 id="aboutMe"> About Me</h2>
+            <h3>Student Engineer</h3>
+            <p>Tech focused on the hardware end for as long as I can remember. After setting a basis in a few programming laguages (Python, HTML, CSS, Javascript) and technologies (Git, React) for the past few months. This summer I'm working on practice
+                projects and revising the maths underlying different Machine Learning concepts in preparation for beginning that focus in my CS degree fall 2024. I'm also a beginner electrical engineering enthusiast, working with arduino and getting into
+                soldering. As a summer project in that regard I'm building a 60s frame Minibike with a fully electric drive train(Throttle to Controller to Motor).</p>
+        </div>
+
+    </div>
+    <main>
+        <h2 class="Projects">Projects</h2>
 
 
+        <h3> Esoteric network GUI (Python)</h3>
+        <img id="GUI" src="images/netGUI.png">
+        <p> The first project I worked on in AP Computer Science after transferring to my new school senior year, a command line interface that has 3 functions, DNS lookup, ping (the middle location dropper button), and traceroute. It takes the input of a
+            website, and returns the info from whatever button you pressed. For example, in the image to the left, I hit traceroute to "bole.eu", it showed 5 of the ip adresses of routers that packets from my laptop went through. It was a great intro
+            to UI design in python.
+        </p>
+        <h3></h3>
+
+    </main>
 
 </body>
-<footer> Hosted on github pages</footer>
+<footer>
+    <p> <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/seth-nyakeri/"><i class="fa-brands fa-linkedin fa-3x"></i></a>
+        <a target="_blank" href="https://github.com/sethoteric"><i class="fa-brands fa-square-github fa-3x"></i></a>
+        <a target="_blank" href="https://www.instagram.com/sethomayo/"><i class="fa-brands fa-square-instagram fa-3x"></i></a>
+    </p>
+    <h4>©2024 Seth, all rights reserved</h6>
+</footer>
 
 </html>
